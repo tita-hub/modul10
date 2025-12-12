@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Mahasiswa;
+
 
 class resmhsController extends Controller
 {
@@ -15,9 +17,7 @@ class resmhsController extends Controller
     $slug = "mahasiswa";
     $mhs = "Tita";
     //$dataMhs = $this->show();
-    $dataMhs = DB::table('mahasiswa')
-                ->join('prodi','mahasiswa.prodi','=','prodi.kodeprodi')
-                ->get();
+    $dataMhs = mahasiswa::all();
     return view('resmhs.index',
         compact('mhs','title','slug','dataMhs'));
     }

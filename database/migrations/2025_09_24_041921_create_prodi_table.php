@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('prodi', function (Blueprint $table) {
             $table->integer('kodeprodi')->primary();
             $table->string('namaprodi');
+            $table->dateTime('create_at');
+            $table->dateTime('update_at');
         });
     }
 

@@ -4,13 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\mhsController;
 use App\Http\Controllers\prodiController;
-//use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\resmhsController;
 use App\Http\Controllers\resprodiController;
 
 
-Route::get('/mahasiswa', [resmhsController::class, 'index']);
-//Route::resource('resprofil',resprofilController::class);
+Route::get('/resmhs', [resmhsController::class, 'index']);
 Route::get('/resmhs/create',[resmhsController::class,'create']);
 Route::get('/resmhs/update',[resmhsController::class,'updateManual']);
 Route::get('/resmhs/destroy',[resmhsController::class,'destroyManual']);
@@ -21,12 +19,10 @@ Route::get('/resprodi/create', [resprodiController::class, 'create']);
 Route::get('/resprodi/update', [resprodiController::class, 'updateManual']);
 Route::get('/resprodi/destroy', [resprodiController::class, 'destroyManual']);
 
-Route::get('/prodi', [resprodiController::class, 'index']);
-Route::get('/prodi/create', [resprodiController::class, 'create']);
-Route::get('/prodi/update', [resprodiController::class, 'updateManual']);
-Route::get('/prodi/destroy', [resprodiController::class, 'destroyManual']);
-
-
+Route::get('/prodi', [prodiController::class, 'index']);
+Route::get('/prodi/create', [prodiController::class, 'create']);
+Route::get('/prodi/update', [prodiController::class, 'updateManual']);
+Route::get('/prodi/destroy', [prodiController::class, 'destroyManual']);
 
 
 

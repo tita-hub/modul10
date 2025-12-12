@@ -18,6 +18,8 @@ class CreateMahasiswaTable extends Migration
             $table->string('nama');
             $table->string('prodi');
             $table->string('angkatan');
+            $table->dateTime('create_at');
+            $table->dateTime('update_at');
         });
     }
 
